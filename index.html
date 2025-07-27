@@ -4,8 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VeilBot</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    @media (max-width: 600px) {
+            header h1 {
+              font-size: 1.5em;
+            }
+            .description {
+              font-size: 1em;
+              padding: 0 10px;
+            }
+            .screenshots img {
+              width: 100%;
+            }
+          }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0f0f0f;
@@ -114,17 +126,17 @@
 
   <div class="tiers">
     <div class="tier-box">
-      <h2>✨ Basic</h2>
+      <h2><i class="fas fa-star"></i> Basic</h2>
       <div class="price">$5 / month</div>
       <p>100 coins per user per month<br/>Refills every month</p>
     </div>
     <div class="tier-box">
-      <h2>💎 Premium</h2>
+      <h2><i class="fas fa-gem"></i> Premium</h2>
       <div class="price">$10 / month</div>
       <p>300 coins per user per month<br/>Refills every month<br/>Earn coins by unveiling<br/>Leaderboard included</p>
     </div>
     <div class="tier-box">
-      <h2>🧠 Elite</h2>
+      <h2><i class="fas fa-brain"></i> Elite</h2>
       <div class="price">$20 / month</div>
       <p>Unlimited coins per user<br/>Earn coins by unveiling<br/>Leaderboard included<br/>Admin log access<br/>Early access to features</p>
     </div>
