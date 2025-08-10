@@ -144,6 +144,19 @@
     /* smooth scroll + offset for sticky nav */
     html { scroll-behavior: smooth; }
     .section, header { scroll-margin-top: 80px; } /* adjust if your nav gets taller */
+
+  /* Align tier buttons to the bottom across cards */
+  .tiers { align-items: stretch; }          /* ensure equal card heights per row */
+  .tier {
+    display: flex;
+    flex-direction: column;
+  }
+  .tier .cta {
+    margin-top: auto;                       /* pushes button to bottom */
+  }
+  .tier .cta .btn {
+    width: 100%;                            /* optional: make buttons equal width */
+  }
   </style>
 </head>
 <body>
