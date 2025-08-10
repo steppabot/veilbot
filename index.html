@@ -140,6 +140,10 @@
     }
     /* Footer */
     footer{padding:40px 20px;text-align:center;color:#8a8a8a;border-top:1px solid #222}
+    
+    /* smooth scroll + offset for sticky nav */
+    html { scroll-behavior: smooth; }
+    .section, header { scroll-margin-top: 80px; } /* adjust if your nav gets taller */
   </style>
 </head>
 <body>
@@ -150,7 +154,7 @@
     <div class="links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
-      <a href="#commads">Commands</a>
+      <a href="#commands">Commands</a>
       <a class="btn" href="https://discord.gg/veilbot">Support Server</a>
     </div>
   </nav>
