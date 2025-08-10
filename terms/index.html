@@ -4,9 +4,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Terms of Service — Veil</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Favicons / Manifest -->
+  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <meta name="theme-color" content="#0f0f0f">
+
+  <!-- Social / SEO -->
+  <meta property="og:title" content="Terms of Service — Veil">
+  <meta property="og:description" content="Read Veil’s Terms of Service.">
+  <meta property="og:image" content="https://veilbot.dev/images/logotest.png">
+  <meta property="og:url" content="https://veilbot.dev/terms/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://veilbot.dev/terms/">
+
   <style>
-    :root { --bg:#0f0f10; --card:#151618; --text:#eaeaea; --muted:#a9a9b2; --gold:#eeac00; }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif}
+    :root { --bg:#0f0f10; --card:#151618; --text:#eaeaea; --muted:#a9a9b2; --gold:#eeac00; --link:#00ffff; }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+
+    /* Nav (matches main site) */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:#1a1a1a;border-bottom:1px solid #2b2b2b;position:sticky;top:0;z-index:50}
+    .nav img{height:56px;width:auto}
+    .links a{margin-left:18px;color:var(--link);text-decoration:none}
+    .btn{display:inline-block;border-radius:10px;padding:12px 18px;font-weight:700;color:#000;background:var(--link);text-decoration:none}
+    .menu-toggle{display:none;background:transparent;border:0;padding:8px;margin-left:auto}
+    .menu-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px}
+    .mobile-menu{display:none}
+    @media (max-width:680px){
+      .links{display:none}
+      .menu-toggle{display:block}
+      .mobile-menu{position:fixed;top:64px;left:12px;right:12px;background:#1a1a1a;border:1px solid #2b2b2b;border-radius:12px;padding:12px;display:none;flex-direction:column;gap:10px;z-index:60}
+      .mobile-menu a{padding:12px 14px;border-radius:10px;background:#232323;border:1px solid #2b2b2b;font-weight:700;color:#fff;text-decoration:none}
+      .mobile-menu .btn{background:var(--link);color:#000;border:none;text-align:center}
+      .mobile-menu.open{display:flex}
+    }
+
     .wrap{max-width:900px;margin:0 auto;padding:48px 20px}
     .card{background:var(--card);border:1px solid #24262a;border-radius:16px;padding:28px}
     h1{font-size:28px;margin:0 0 8px}
@@ -17,9 +57,33 @@
     ul{padding-left:18px}
     code{background:#202228;padding:2px 6px;border-radius:6px}
     .muted{color:var(--muted)}
+
+    footer{padding:40px 20px;text-align:center;color:#8a8a8a;border-top:1px solid #222}
+    footer .legal { margin-top: 6px; font-size: .95em; }
+    footer .legal a { color:#bdbdbd; text-decoration:none }
+    footer .legal a:hover { color:#fff; text-decoration: underline; }
   </style>
 </head>
 <body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/"><img src="/images/logotest.png" alt="VeilBot logo"></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="links">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#commands">Commands</a>
+      <a class="btn" href="https://discord.gg/veilbot">Support Server</a>
+    </div>
+    <div class="mobile-menu">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#commands">Commands</a>
+      <a class="btn" href="https://discord.gg/veilbot">Support Server</a>
+    </div>
+  </nav>
+
   <main class="wrap">
     <div class="card">
       <h1>Terms of Service</h1>
@@ -122,6 +186,23 @@
       </p>
     </div>
   </main>
+
+  <footer>
+    <div>© 2025 VeilBot • Built for anonymous chaos</div>
+    <div class="legal">
+      <a href="https://discord.com/oauth2/authorize?client_id=1403948162955219025&scope=bot%20applications.commands&permissions=1126847484390512">Invite the Bot</a>
+      · <a href="https://www.veilbot.dev/terms/" target="_blank" rel="noopener">Terms of Service</a>
+      · <a href="https://www.veilbot.dev/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu   = document.querySelector('.mobile-menu');
+    toggle?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
-
