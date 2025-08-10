@@ -138,6 +138,16 @@
         0 0 0 2px color-mix(in oklab, var(--accent) 55%, transparent),
         0 10px 34px color-mix(in oklab, var(--accent) 32%, transparent);
     }
+        /* Alternate feature layout on desktop only */
+    @media (min-width: 900px){
+      .feature{display:grid; grid-template-columns:420px 1fr; gap:32px; align-items:center;}
+      .feature:nth-of-type(even) img{order:2;}
+      .feature:nth-of-type(even) > div{order:1;}
+    }
+    /* Mobile/tablet keeps normal flow */
+    @media (max-width: 899px){
+      .feature img, .feature > div { order: unset; }
+    }
     /* Footer */
     footer{padding:40px 20px;text-align:center;color:#8a8a8a;border-top:1px solid #222}
   </style>
