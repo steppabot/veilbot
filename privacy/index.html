@@ -62,6 +62,9 @@
     footer .legal { margin-top: 6px; font-size: .95em; }
     footer .legal a { color:#bdbdbd; text-decoration:none }
     footer .legal a:hover { color:#fff; text-decoration: underline; }
+    /* Make nav links cyan, but keep the button text dark */
+    .nav .links a:not(.btn){ color: var(--link); }
+    .nav .links .btn{ color:#000 !important; background: var(--link); }
   </style>
 </head>
 <body>
