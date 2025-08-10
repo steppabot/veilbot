@@ -115,7 +115,29 @@
         0 0 0 1px color-mix(in oklab, var(--accent) 55%, transparent),
         0 10px 40px color-mix(in oklab, var(--accent) 20%, transparent);
     }
-
+        /* Align tier icons / emoji nicely */
+    .tier h4 i,
+    .tier h4 .emoji {
+      font-size: 1.15em;
+      line-height: 0;
+      vertical-align: -2px;
+    }
+    
+    /* Make each plan's CTA button use its own accent color */
+    .tier .btn{
+      background: var(--accent);
+      color:#0b0b0b;
+      border-radius:10px;
+      padding:12px 18px;
+      font-weight:800;
+      box-shadow: 0 6px 20px color-mix(in oklab, var(--accent) 22%, transparent);
+    }
+    .tier .btn:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 0 2px color-mix(in oklab, var(--accent) 55%, transparent),
+        0 10px 34px color-mix(in oklab, var(--accent) 32%, transparent);
+    }
     /* Footer */
     footer{padding:40px 20px;text-align:center;color:#8a8a8a;border-top:1px solid #222}
   </style>
