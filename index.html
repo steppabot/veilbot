@@ -107,6 +107,11 @@
       border:1px solid #2a2a2a;
       box-shadow:0 20px 50px rgba(0,0,0,.35);
     }
+
+    /* stack images in the Unveil section specifically */
+    .feature .gallery.stack {
+      grid-template-columns: 1fr !important;
+    }
     
     a{color:var(--link);text-decoration:none}
     img{max-width:100%;height:auto;display:block}
@@ -365,9 +370,8 @@
         </div>
       </article>
 
-      <!-- 3. Unveiled state -->
       <article class="feature">
-        <div class="gallery">
+        <div class="gallery stack">
           <img src="/images/Unveil1.PNG" alt="Unveiled text veil (black card)">
           <img src="/images/Veil4.PNG"  alt="Unveiled image veil (black card)">
         </div>
