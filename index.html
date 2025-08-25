@@ -92,6 +92,22 @@
       line-height:1.45;
     }
 
+    /* small 2-up image gallery for feature blocks */
+    .gallery{
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr 1fr;
+    }
+    @media (max-width:900px){
+      .gallery{ grid-template-columns:1fr; }
+    }
+    /* keep existing card styling on images inside galleries */
+    .feature .gallery img{
+      border-radius:14px;
+      border:1px solid #2a2a2a;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+    }
+    
     a{color:var(--link);text-decoration:none}
     img{max-width:100%;height:auto;display:block}
 
@@ -247,8 +263,7 @@
     .mobile-menu .btn-support{background:var(--link); color:#000; text-align:center; border:none}
     .mobile-menu.open{display:flex}
   }
-
-
+    
     footer .legal { margin-top: 6px; font-size: .95em; }
     footer .legal a { color:#bdbdbd; }
     footer .legal a:hover { color:#fff; text-decoration: underline; }
@@ -324,6 +339,19 @@
         </div>
       </article>
 
+      <!-- 1.5 Image Veils -->
+      <article class="feature">
+        <img src="/images/Veil3.PNG" alt="Anonymous image veil card">
+        <div>
+          <h3>Share an Image Behind the Veil</h3>
+          <p>
+            Not in the mood for words? Post a single <b>image</b> instead. It’s fully anonymous
+            until unveiled—just like text veils.
+          </p>
+          <p><small>Screenshot: an image-only veil (gold state).</small></p>
+        </div>
+      </article>
+
       <!-- 2. Guessing UI -->
       <article class="feature">
         <img src="/images/GuessMenu.PNG" alt="Guess dropdown screenshot">
@@ -339,7 +367,10 @@
 
       <!-- 3. Unveiled state -->
       <article class="feature">
-        <img src="/images/Unveil1.PNG" alt="Unveiled message screenshot">
+        <div class="gallery">
+          <img src="/images/Unveil1.PNG" alt="Unveiled text veil (black card)">
+          <img src="/images/Veil4.PNG"  alt="Unveiled image veil (black card)">
+        </div>
         <div>
           <h3>Unveil the Author</h3>
           <p>
@@ -477,9 +508,10 @@
 
     <!-- USER COMMANDS -->
     <details style="background:#1c1c1c;border:1px solid #2d2d2d;border-radius:10px;padding:14px;margin:10px 0">
-      <summary style="font-weight:700;cursor:pointer">/veil &lt;message&gt;</summary>
+      <summary style="font-weight:700;cursor:pointer">/veil &lt;message&gt; | [image]</summary>
       <p style="margin:10px 0 0;color:#d6d6d6">
-        Send a message behind a veil to your linked Veil channel (anonymous).
+        Post anonymously to your linked Veil channel — <b>either</b> a text message (up to 200 characters)
+        <b>or</b> a single image.
       </p>
     </details>
 
